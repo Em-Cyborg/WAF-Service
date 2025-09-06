@@ -1,0 +1,76 @@
+# ==============================================
+# KST Project Backend 환경변수 설정
+# ==============================================
+
+# ==============================================
+# 토스 페이먼츠 설정
+# ==============================================
+# 토스 페이먼츠 클라이언트 키 (테스트용)
+TOSS_CLIENT_KEY=your_toss_client_key
+
+# 토스 페이먼츠 시크릿 키 (테스트용)
+TOSS_SECRET_KEY=your_toss_secret_key
+
+# 토스 페이먼츠 API URL
+TOSS_API_URL=https://api.tosspayments.com/v1/payments
+
+# ==============================================
+# WAF 자동화 설정
+# ==============================================
+# WAF 설정 파일 경로
+WAF_CONFIG_PATH=/etc/nginx/conf.d
+
+# WAF 기본 포트 (HTTP)
+WAF_DEFAULT_PORT=80
+
+# WAF SSL 포트 (HTTPS)
+WAF_SSL_PORT=443
+
+# ==============================================
+# Cloudflare 설정 (WAF DNS 관리용)
+# ==============================================
+# Cloudflare API 토큰 (DNS:Edit 권한 필요)
+CLOUDFLARE_API_TOKEN=your_cloudflare_api_token
+
+# Cloudflare 존 ID
+CLOUDFLARE_ZONE_ID=your_cloudflare_zone_id
+
+# 기본 도메인 (서브도메인이 생성될 기준 도메인)
+BASE_DOMAIN=your_base_domain
+
+# WAF 서버 IP 주소
+WAF_SERVER_IP=your_waf_server_ip
+
+# ==============================================
+# 일반 설정
+# ==============================================
+# 디버그 모드 (개발: true, 운영: false)
+DEBUG=true
+
+# CORS 허용 도메인 (콤마로 구분, *는 모든 도메인 허용)
+CORS_ORIGINS=*
+
+# 서버 호스트
+HOST=0.0.0.0
+
+# 서버 포트
+PORT=8000
+
+# ==============================================
+# 데이터베이스 설정
+# ==============================================
+DATABASE_URL=mysql+pymysql://user:password@localhost:3306/waf_service?charset=utf8mb4
+
+# ==============================================
+# 로그 서버 설정
+# ==============================================
+LOG_MONITORING_SERVER_BASE_URL= http://your_log_monitoring_server_base_url
+
+# ==============================================
+# google auth 설정정
+# ==============================================
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+JWT_SECRET_KEY=your_jwt_secret_key
+JWT_ALGORITHM=HS256
+JWT_ACCESS_TOKEN_EXPIRE_MINUTES=30
