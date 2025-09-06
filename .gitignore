@@ -68,11 +68,11 @@ logs/
 *.temp
 
 # Scripts (각 브랜치에서 제외할 파일들)
-# setup_tmux_systemd.sh
-# start_tmux_service.sh
-# stop_tmux_service.sh
-# tmux_manage.sh
-# waf-tmux.service
+setup_tmux_systemd.sh
+start_tmux_service.sh
+stop_tmux_service.sh
+tmux_manage.sh
+waf-tmux.service
 
 # BE 브랜치에서 제외할 파일들
-# frontend/
+backend/
