@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: password
+      MARIADB_DATABASE: waf_service
+      MARIADB_USER: user
+      MARIADB_PASSWORD: password
+      TZ: Asia/Seoul
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MARIADB_USER -p$$MARIADB_PASSWORD || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      app_net:
+        ipv4_address: 172.23.0.10
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
